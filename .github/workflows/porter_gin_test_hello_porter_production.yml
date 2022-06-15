@@ -16,7 +16,7 @@ jobs:
       run: |
         /bin/bash -c "$(curl -fsSL https://install.porter.run)"
         porter get gin-test-hello-porter --output json
-        echo $(porter get gin-test-hello-porter --output json | jq -r '.revision')
+        echo $(porter get gin-test-hello-porter --output json | jq -r '.revision_id')
       env:
         PORTER_PROJECT: "72"
         PORTER_CLUSTER: "83"
