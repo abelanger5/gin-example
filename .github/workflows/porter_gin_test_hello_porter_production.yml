@@ -15,6 +15,7 @@ jobs:
     - name: Get revision
       run: |
         /bin/bash -c "$(curl -fsSL https://install.porter.run)"
+        porter get gin-test-hello-porter --output json
         echo $(porter get gin-test-hello-porter --output json | jq -r '.revision')
     - name: Update Porter App
       timeout-minutes: 20
