@@ -12,6 +12,9 @@ jobs:
     - name: Set Github tag
       id: vars
       run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+    - name: Get revision
+      run: |
+        echo $(porter get gin-test-hello-porter --output json | jq -r '.revision')
     - name: Update Porter App
       timeout-minutes: 20
       uses: porter-dev/porter-update-action@v0.26.0
