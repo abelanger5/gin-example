@@ -21,6 +21,7 @@ jobs:
         PORTER_PROJECT: "72"
         PORTER_CLUSTER: "83"
         PORTER_TOKEN: ${{ secrets.PORTER_TOKEN_PRODUCTION_72 }}
+        PORTER_HOST: https://dashboard.staging.getporter.dev
     - name: Update Porter App
       timeout-minutes: 20
       uses: porter-dev/porter-update-action@v0.26.0
